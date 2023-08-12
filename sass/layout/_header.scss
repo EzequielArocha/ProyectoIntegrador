@@ -4,15 +4,20 @@
 
 .main-header {
   display: flex;
-  flex-direction: column;
+
+  /* Posible  Cambio */
+  /*   width: 100%;
+  position: fixed;
+  z-index: 1; */
+
+  /*---1ER CAMBIO----*/
+  flex-direction: column-reverse;
 
   @media (max-width: 768px) {
     & {
       flex-direction: column-reverse;
     }
   }
-
-
 }
 
 #menu {
@@ -25,7 +30,6 @@
   &:checked ~ .search-bar .menu-toogle__label {
     background-color: yellow;
   }
-
 }
 
 /* ------------------------------------- */
@@ -33,12 +37,17 @@
 /* ------------------------------------- */
 
 .nav-bar {
-  background-color: mediumaquamarine;
+  /*--3er CAMBIO--*/
+  background-color: rgba(26, 31, 12, 1);
 
   &__nav-list {
     display: flex;
     list-style-type: none;
-    justify-content: center;
+    justify-content: space-around;
+
+    /*--2DO CAMBIO--*/
+    //margin:auto
+    margin: 10px;
 
     @media (max-width: 768px) {
       & {
@@ -49,12 +58,12 @@
 
   &__nav-item {
     text-align: center;
-    background-color: pink;
+    /*  background-color: pink; */
   }
 
   &__nav-link {
     display: block;
-    background-color: purple;
+    /*  background-color: purple; */
     color: #fff;
     padding: 1em 2em;
     text-decoration: none;
@@ -86,19 +95,22 @@
   }
 
   &__form-container {
-    background-color: gold;
+    /* 4to Camabio */
+    background-color: rgb(235, 239, 248);
     display: flex;
     flex-basis: 100%;
     justify-content: center;
   }
 
   &__form-label {
-    background-color: greenyellow;
+    /*  background-color: greenyellow; */
   }
 
   &__form-search {
-    background-color: deeppink;
-    width: 70%;
+    /*  background-color: deeppink; */
+    /*Cambios:*/
+    width: 20%;
+    height: 40px;
   }
 
   &__form-submit {
@@ -134,23 +146,23 @@
   &__bottom-bread {
     display: block;
     background-color: #333;
-    height: .2em;
+    height: 0.2em;
     position: absolute;
-    left: .5em;
-    right: .5em;
+    left: 0.5em;
+    right: 0.5em;
   }
 
   &__top-bread {
-    top: .8em;
+    top: 0.8em;
   }
 
   &__meat {
     top: 50%;
-    margin-top: -.1em;
+    margin-top: -0.1em;
   }
 
   &__bottom-bread {
-    bottom: .8em;
+    bottom: 0.8em;
   }
 
   @media (max-width: 768px) {
