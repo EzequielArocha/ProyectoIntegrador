@@ -1,0 +1,14 @@
+.section-cards {
+  padding: 0%;
+  &__header {
+    background-image: url("../img/banner.png");
+    color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
