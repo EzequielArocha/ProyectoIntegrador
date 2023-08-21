@@ -1,75 +1,122 @@
+.card__image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+  img {
+    max-width: 70%;
+    transition: 0.5s;
+  }
+}
+
 .card {
-  outline: none; /* Como el borde pero no ocupa espacio en la caja */
-  width: 220px;
-  max-width: 300px;
-  height: 400px;
-  overflow: hidden; /* Si el contenido ocupa más espacio que el tamaño del contenedor. Queda oculto */
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  position: relative;
+  width: 320px;
+  height: 420px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 50px;
+  box-shadow: 5px 5px 20px black;
+  flex-wrap: wrap;
+  background-color: white;
 
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.3);
-
-  transition: all 0.2s;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.03) skewX(0);
-    transform-origin: bottom;
-    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
-  }
-
-  /*   &:nth-child(5n + 1) {
-    background-image: linear-gradient(to top, #aaafad 0%, #60efff 30%);
-  }
-
-  &:nth-child(5n + 2) {
-    background-image: linear-gradient(to top, #696eff 0%, #f8accf 30%);
-  }
-
-  &:nth-child(5n + 3) {
-    background-image: linear-gradient(to top, #ff1b6b 0%, #34caff 30%);
-  }
-
-  &:nth-child(5n + 4) {
-    background-image: linear-gradient(to top, #ff930f 0%, #fff95b 30%);
-  }
-
-  &:nth-child(5n + 5) {
-    background-image: linear-gradient(to top, #ff0f7b 0%, #f89b29 30%);
-  }
- */
-  &__image-container {
-    height: 200px;
-    background-color: blue;
-    overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 200px, 0 180px);
-  }
-
-  &:hover &__image-container,
-  &:focus &__image-container {
-    clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
-  }
-
-  &__image {
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
     width: 100%;
-    height: 100%; /* 200px */
-    object-fit: cover;
-    transition: 0.2s;
+    height: 100%;
+    background: #135ff7;
+    transform: skewY(345deg);
+    transition: 0.5s;
   }
 
-  &:hover &__image,
-  &:focus &__image {
-    transform: scale(1.4) rotate(5deg);
-    transform-origin: center;
+  &:hover::before {
+    top: -70%;
+    transform: skewY(395deg);
   }
 
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 8em;
+    color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover .card__image-container img {
+    max-width: 50%;
+  }
+
+  // Estilos para el contenido de la tarjeta
   &__content {
-    padding: 1em;
+    position: relative;
+    padding: 6px;
+    height: 60px;
+    width: 100%;
+    background: rgba(27, 27, 27, 0.5);
+    color: white;
+    bottom: -45px;
+    transition: 0.5s;
+    z-index: 1;
+    text-align: center;
+
+    // Estilos para los encabezados
+    h2 {
+      margin: 10px;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    // Estilos para los párrafos
+    p {
+      font-size: 18px;
+      margin: 10px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+  }
+
+  // Efecto al pasar el mouse sobre las tarjetas
+  &:hover {
+    cursor: pointer;
+  }
+
+  // Efecto al pasar el mouse sobre el contenido de la tarjeta
+  &:hover .card__content {
+    height: auto;
+    bottom: -20px;
+    background-color: rgba(10, 10, 10, 0.78);
+  }
+  // Efecto al pasar el mouse sobre el párrafo
+  &:hover p {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Efecto al pasar el mouse sobre la imagen
+  &:hover img {
+    transform: scale(1.1) rotate(-10deg);
+  }
+
+  // Estilos para los artículos de las tarjetas
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
   }
 
   @media (min-width: 1024px) {
     & {
-      /* .card */
       min-width: 240px;
     }
   }
@@ -82,7 +129,6 @@
     }
 
     &__article {
-      /* .card__article */
       display: flex;
     }
 
@@ -91,7 +137,7 @@
       clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
     }
 
-    &:hover &__image-container, /* .card:hover .card__image-container */
+    &:hover &__image-container,
     &:focus &__image-container {
       width: 40%;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
