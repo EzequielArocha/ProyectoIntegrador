@@ -38,18 +38,22 @@
 
       <div class="search-bar">
         <!-- search-bar -->
-        <div class="search-bar__logo-container">Logo</div>
+        <div class="search-bar__logo-container">
+          <img src="img/logo.png" alt="BuyTechX" />
+        </div>
         <form action="" class="search-bar__form-container">
-          <label for="busqueda" class="search-bar__form-label">Buscar</label>
+          <label for="busqueda" class="search-bar__form-label"></label>
           <input
             type="search"
             class="search-bar__form-search"
             id="busqueda"
-            placeholder="¿Qué estas Buscando?"
+            placeholder="  ¿Qué estas Buscando?"
           />
-          <input type="submit" value="Buscar" class="search-bar__form-submit" />
+          <input type="submit" value="BUSCAR" class="search-bar__form-submit" />
         </form>
-        <div class="search-bar__carrito-container">C</div>
+        <div class="search-bar__carrito-container">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
         <div class="menu-toggle">
           <label for="menu" class="menu-toggle__label">
             <span class="menu-toggle__top-bread"></span>
@@ -295,16 +299,31 @@
     <footer>
       <div class="footer_content">
         <div class="footer_contacts">
-          <h1>BaireStore</h1>
+          <h1>BUYTECHX</h1>
           <p>Seguinos en nuestras redes</p>
           <div class="footer_social_media">
-            <a href="#" class="footer-link" id="instagram">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="footer-link"
+              id="instagram"
+            >
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="#" class="footer-link" id="facebook">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="footer-link"
+              id="facebook"
+            >
               <i class="fa-brands fa-facebook"></i>
             </a>
-            <a href="#" class="footer-link" id="twitter">
+            <a
+              href="https://www.twitter.com/"
+              target="_blank"
+              class="footer-link"
+              id="twitter"
+            >
               <i class="fa-brands fa-twitter"></i>
             </a>
           </div>
@@ -315,13 +334,13 @@
             <h3>Información</h3>
           </li>
           <li>
-            <a href="#" class="footer-link">+54 11 1234-5678</a>
+            <p>+54 11 1234-5678</p>
           </li>
           <li>
-            <a href="#" class="footer-link">info@bairestore.com</a>
+            <p>info@buytechx.com</p>
           </li>
           <li>
-            <a href="#" class="footer-link">Buenos Aires, Argentina</a>
+            <p>Buenos Aires, Argentina</p>
           </li>
         </ul>
         <ul class="footer-list">
@@ -344,7 +363,7 @@
           <p>Recibí ofertas y promociones!</p>
 
           <div class="input_group">
-            <input type="email" id="email" />
+            <input type="email" id="email" placeholder="Correo Electrónico" />
             <button class="input-button">
               <i class="fa-regular fa-envelope"></i>
             </button>

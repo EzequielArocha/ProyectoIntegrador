@@ -48,6 +48,18 @@
     /*--2DO CAMBIO--*/
     //margin:auto
     margin: 10px;
+    .nav-bar__nav-link {
+      color: #d2d1d1;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .nav-bar__nav-link:hover {
+      border-color: #fff;
+      color: #fff;
+    }
 
     @media (max-width: 768px) {
       & {
@@ -58,12 +70,11 @@
 
   &__nav-item {
     text-align: center;
-    /*  background-color: pink; */
   }
 
   &__nav-link {
     display: block;
-    /*  background-color: purple; */
+
     color: #fff;
     padding: 1em 2em;
     text-decoration: none;
@@ -81,7 +92,6 @@
 /* ------------------------------------- */
 
 .search-bar {
-  background-color: olivedrab;
   display: flex;
   justify-content: space-between;
 
@@ -95,33 +105,93 @@
   }
 
   &__logo-container {
-    background-color: yellow;
+    display: inline-block;
+    background-color: #d2d1d1;
+    @media (max-width: 768px) {
+      & {
+        display: none;
+      }
+    }
+  }
+  &__logo-container img {
+    width: 55%;
+    vertical-align: middle;
+
+    height: auto;
   }
 
   &__form-container {
     /* 4to Camabio */
-    background-color: whitesmoke;
+    background-color: #d2d1d1;
+    padding: auto;
     display: flex;
-    flex-basis: 100%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    margin-left: -150px;
+
+    @media (max-width: 768px) {
+      & {
+        margin: auto;
+        width: 100%;
+      }
+    }
+  }
+  &__form-label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
   }
 
   &__form-search {
-    /*  background-color: deeppink; */
     /*Cambios:*/
-    width: 30%;
+    width: 50%;
     height: 40px;
+    padding: 8px;
+    border: 2px solid #1d74a9;
+    border-radius: 3px;
+
+    @media (max-width: 768px) {
+      & {
+        width: 100%;
+      }
+    }
   }
 
   &__form-submit {
-    background-color: darkslategray;
+    background-color: #1d74a9;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  &__form-submit:hover {
+    transform: scale(1.1);
+    background-color: #2c79a8;
+    border: 1px solid #332f2f;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.534);
   }
 
   &__carrito-container {
-    flex: 0 0 3em; /* shorthand (grow shrink basis */
-    background-color: goldenrod;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    cursor: pointer;
+    background-color: #d2d1d1;
+
+    & .fa-cart-shopping {
+      font-size: 35px;
+      color: #1d74a9;
+      transition: 0.5s;
+      margin: auto;
+    }
+    & .fa-cart-shopping:hover {
+      color: #0b2fd3;
+      transform: scale(1.2);
+    }
   }
 }
 

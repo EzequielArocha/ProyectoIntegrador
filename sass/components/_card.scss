@@ -52,7 +52,6 @@
     max-width: 50%;
   }
 
-  // Estilos para el contenido de la tarjeta
   &__content {
     position: relative;
     padding: 6px;
@@ -60,12 +59,11 @@
     width: 100%;
     background: rgba(27, 27, 27, 0.5);
     color: white;
-    bottom: -45px;
+    bottom: -115px;
     transition: 0.5s;
     z-index: 1;
     text-align: center;
 
-    // Estilos para los encabezados
     h2 {
       margin: 10px;
       font-size: 20px;
@@ -73,7 +71,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    // Estilos para los párrafos
+
     p {
       font-size: 18px;
       margin: 10px;
@@ -83,29 +81,24 @@
     }
   }
 
-  // Efecto al pasar el mouse sobre las tarjetas
   &:hover {
     cursor: pointer;
   }
 
-  // Efecto al pasar el mouse sobre el contenido de la tarjeta
   &:hover .card__content {
     height: auto;
-    bottom: -20px;
+    bottom: -80px;
     background-color: rgba(10, 10, 10, 0.78);
   }
-  // Efecto al pasar el mouse sobre el párrafo
+
   &:hover p {
     opacity: 1;
     visibility: visible;
   }
 
-  // Efecto al pasar el mouse sobre la imagen
   &:hover img {
     transform: scale(1.1) rotate(-10deg);
   }
-
-  // Estilos para los artículos de las tarjetas
 
   &__article {
     display: flex;
@@ -133,14 +126,20 @@
     }
 
     & &__image-container {
-      width: 40%;
-      clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+      width: 60%;
+      margin-top: -20px;
     }
-
+    &__content {
+      bottom: 30px;
+      background: rgba(27, 27, 27, 0.7);
+    }
+    &:hover &__content {
+      visibility: visible;
+      bottom: 120px;
+    }
     &:hover &__image-container,
     &:focus &__image-container {
-      width: 40%;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      width: 90%;
     }
   }
 }
